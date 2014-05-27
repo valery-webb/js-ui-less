@@ -1,16 +1,22 @@
 $(document).ready(function() {
 
+
+
 //@todo refactor this hardcore
-
-
     $(window).on('scroll', function() {
-         if ($(window).scrollTop() > 85) {
-             $('.offset-wrapper').addClass('fixed-element');
-         }
-         else {
-             $('.offset-wrapper').removeClass('fixed-element');
-         }
+
+        var viewPortWidth = $(this).width(),
+            offsetWrapper = $('.offset-wrapper'),
+            scrollPoint = (viewPortWidth < 321) ? 50 : 85;
+
+        if ($(this).scrollTop() > scrollPoint) {
+            offsetWrapper.addClass('fixed-element');
+        } else {
+            offsetWrapper.removeClass('fixed-element');
+        }
     });
+
+
 
 //@todo refactor this hardcore
 $('.menu-toggle').on('click', function(e) {

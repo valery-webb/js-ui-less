@@ -1,21 +1,29 @@
 /* Base layout 
 ------------------------*/
-body {
-  font: 100%/1.3em @base-font;
-}
 
 header{
-    height:85px;
+  position:relative;
+  height:85px;
 
-    h1 {
-      width: 38%;
-      margin:0 auto;
+  .logo-offset{
+      display: table;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+  }
 
-      .logo {
-        width:100%;
-        height:auto;
-      }
-    }
+  .logo-wrapper {
+      display: table-cell;
+      vertical-align: middle;
+  }
+
+  .logo {
+      display:block;
+      margin: 0 auto;
+      width: 373px;
+      height:65px;
+      background: url(../app/images/logo_960.png) top left no-repeat;
+  }
 }
 
 .offset-wrapper{
@@ -32,7 +40,6 @@ header{
   }
 
   article{
-    border:#ccc 1px solid;
     position:relative;
     padding-bottom:50px;
 
@@ -42,9 +49,12 @@ header{
     }
 
     .meta-box {
-      height:40px;
-      border-top:#ccc 1px solid;
-      border-bottom:#ccc 1px solid;
+      border-top:@color-gray-light 1px solid;
+      border-bottom:@color-gray-light 1px solid;
+
+      .date, .author, date {
+        line-height:38px;
+      }
     }
   }
 }
@@ -70,8 +80,8 @@ header{
 
   .social-toolbar{
     position:absolute;
-    top:0;
-    right:0;
+    top:-3px;
+    right:-15px;
 
     li{
       float:none;
@@ -91,14 +101,22 @@ header{
     height:36px;
   }
 
-  .content{
+  header{
+    height:50px;
+
+    .logo {
+      width: 233px;
+      height:37px;
+      background: url(../app/images/logo_320.png) top left no-repeat;
+    }
+  }
+
+  .content {
     width:100%;
 
     article {
       padding-bottom:70px;
     }
-
-
   }
 
   aside{
@@ -135,11 +153,7 @@ header{
 
   .social-toolbar{
     position:absolute;
-    bottom:40px;
-  }
-
-  .article-text {
-    //padding-bottom:30px;
+    bottom:20px;
   }
 
   .meta-box{
@@ -152,5 +166,24 @@ header{
     display:none;
   }
 
+  figcaption {
+    font-size:100%;
+    line-height:160%;
+    text-align:center;
+    padding:0 30px;
+    font-weight:bold;
+  }
+
+  figure {
+    background: @color-gray-origin;
+  }
+
+  .article-text {
+    text-align:justify;
+  }
 
 }
+
+
+
+
