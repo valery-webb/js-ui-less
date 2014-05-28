@@ -10,8 +10,7 @@ js-ui-less
 2. Use:
   * Just clone this repo and run index.html
 
-<br />
-<br />
+<hr />
 compatibility: IE8+
 <br />
 custom grid system: utils.less
