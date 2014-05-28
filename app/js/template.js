@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
 
-//@todo refactor this hardcore
+// @todo: strong refactoring
     $(window).on('scroll', function() {
 
         var viewPortWidth = $(this).width(),
@@ -18,11 +18,12 @@ $(document).ready(function() {
 
 
 
-//@todo refactor this hardcore
+// @todo: strong refactoring
 $('.menu-toggle').on('click', function(e) {
 
-    var list = $('.nav-list');
-    var li = $('.nav-list li');
+    var list = $('.nav-list'),
+        li = $('.nav-list li'),
+        content = $('.content');
 
     if (list.hasClass('opened')) {
 
@@ -45,24 +46,32 @@ $('.menu-toggle').on('click', function(e) {
         list.addClass('opened');
         li.css({display: 'block'})
 
-
         list.slideDown({
             duration: 500,
             progress: function() {
-                $('.content').css({
+                content.css({
                     marginTop: list.height()
                 });
             }
         });
 
     }
-}); // mobile menu end
+});
 
-//@todo refactor this hardcore
-$('.services-toolbar button').on('click', function(e){
-    var targetContent = $(e.target).data('content');
-    $('.services-content').find("[data-content='" + targetContent + "']").toggleClass('hide');
-})
+// @todo: strong refactoring
+$('.services-toolbar button').on('click', function(e) {
+
+    var targetContent = $(e.target).data('content'),
+        contentToOpen = $('.services-content').find("[data-content='" + targetContent + "']"),
+        contentBoxes = $('.services-content > div');
+
+    if (contentToOpen.is(':visible')) {
+        contentToOpen.hide();
+    } else {
+        contentBoxes.hide();
+        contentToOpen.show();
+    }
+});
 
 
 
