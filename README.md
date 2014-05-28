@@ -10,9 +10,14 @@ js-ui-less
 2. Use:
   * Just clone this repo and run index.html
 
+<br />
+<br />
 compatibility: IE8+
+<br />
 custom grid system: utils.less
+<br />
 polyfills: html5shiv, respondjs
+<br />
 jquery: 1.8.0
 
 
